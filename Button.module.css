@@ -1,0 +1,109 @@
+/* ホーム画面を中央揃えにする */
+.button_Center {
+  display: block;
+  position: relative;
+  background-color: #e6b073;
+  /*background-image:url(./img/An1_png.png);  CSSで画像を表示するテスト*/
+  background-size: cover;
+  background-repeat: repeat;
+  text-align: center;
+  width: 100%;
+  min-height: 89vh;
+ 
+  
+}
+
+/* タイトル画像のblock要素を中央揃えにする */
+.button_Gazou {
+  display: block;
+  position: relative;
+  /*background-color: #252524; 画像のブロックの要素がどのくらいの範囲か確認できる*/
+  background-color: #252524;
+  text-align: center;
+  margin: auto;
+  padding: auto;
+  width: 50%;
+  height: 200px;
+  
+}
+
+/* タイトル画像のimg要素を中央揃えにする */
+.button_Gazou img {
+  display: block;
+  position: relative;
+  left: -25px;
+  width: 120%;
+  height: auto;
+  transform: translateY(-30%);
+}
+
+/* "あなたの名刺データ"より下の部分を中央揃えにする */
+.button_Home {
+  display: block;
+  position: relative;
+  /*background-color: #b3b317; 画像のブロックの要素がどのくらいの範囲か確認できる*/
+  background-color: #b3b317;
+ 
+  top : 60px;
+  margin: auto;
+  padding: auto;
+  width: 50%;
+  height: 30%;
+  z-index: 1;
+  
+}
+
+/* "あなたの名刺データ"を中央揃えにする */
+.button_Home h2{
+  font-family: "飴鞭ゴシック" ;
+  color: #181316;
+  margin: auto;
+  padding: auto;
+  width: 50%;
+  height: 30%;
+  z-index: 1;
+  
+}
+
+/* "プロフィール入力へ"のボタンの色や動き */
+.button {
+  display: block;
+  width: 25%;
+  height: 60px;
+  margin-top: 20px;
+  margin: 10px auto;
+  font-size: 20px;
+  color:rgb(77, 76, 76);
+  padding: 15px 20px;
+  border-radius: 10px;
+  font-family: 'sans-serif';
+  box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  background-color: #e9a4e9;
+}
+/* ↑のマウスが重なった時のボタンの色や動き */
+.button:hover {
+  box-shadow: 0px 8px 3px rgba(0, 0, 0, 0.5);
+  transform: scale(0.98);
+}
+
+/* "作る,入る"のボタンの色や動き */
+.button_Group {
+  width: 10%;
+  height: 45px;
+  margin-top: 5px;
+  font-size: 20px;
+  color:rgb(77, 76, 76);
+  padding: 9px 20px;
+  border-radius: 10px;
+  font-family: 'sans-serif';
+  box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.3);
+  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
+  background-color: #e9a4e9;
+}
+/* ↑のマウスが重なった時のボタンの色や動き */
+.button_Group:hover {
+  box-shadow: 0px 8px 3px rgba(0, 0, 0, 0.5);
+  transform: scale(0.98);
+}
+

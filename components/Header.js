@@ -6,7 +6,9 @@ import ReactDOM from 'react-dom/client';
 const Header = () => {
   return(
     <header>
-      <h1>なにはな</h1>
+      <div>
+        <h1>なにはな</h1>
+      </div>
     </header>
   );
 };
