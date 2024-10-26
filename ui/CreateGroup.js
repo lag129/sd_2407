@@ -1,7 +1,7 @@
 "use strict";
 
 import React from 'react';
-import { addRoomData, fetchRoomData } from '../backend/fetch';
+import { addData } from '../backend/fetch';
 
 const generateID = () => {
   // 100000から999999までのランダムな整数を作成
@@ -20,7 +20,7 @@ const handleSubmit = async (e) => {
   const myData = localStorage.getItem("myMeishiData");
   const data = JSON.parse(myData);
   try {
-    const docId = await addRoomData("posts", data);
+    const docId = await addData("posts", data);
     console.log("追加成功:", docId);
   } catch (error) {
     console.error("追加エラー:", error);

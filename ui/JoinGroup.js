@@ -1,7 +1,7 @@
 "use strict";
 
 import React from 'react';
-import { addRoomData, fetchRoomData } from '../backend/fetch';
+import { addData, fetchData } from '../backend/fetch';
 
 /**
  * ローカルストレージのデータをサーバーへ送信 
@@ -12,7 +12,7 @@ const handleSubmit = async (e) => {
   const myData = localStorage.getItem("myMeishiData");
   const data = JSON.parse(myData);
   try {
-    const docId = await addRoomData("posts", data);
+    const docId = await addData("posts", data);
     console.log("追加成功:", docId);
   } catch (error) {
     console.error("追加エラー:", error);
@@ -22,7 +22,7 @@ const handleSubmit = async (e) => {
 // データの取得
 const loadData = async () => {
   try {
-    const documents = await fetchRoomData("posts");
+    const documents = await fetchData("posts");
     console.log("取得したデータ:", documents);
   } catch (error) {
     console.error("取得エラー:", error);

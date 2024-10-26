@@ -26,7 +26,7 @@ const app = initializeApp(firebaseConfig);
 const db = getFirestore(app);
 
 // データを追加する関数
-export const addRoomData = async (collectionName, data) => {
+export const addData = async (collectionName, data) => {
   try {
     const docRef = await addDoc(collection(db, collectionName), {
       ...data,
@@ -41,7 +41,7 @@ export const addRoomData = async (collectionName, data) => {
 };
 
 // データを取得する関数
-export const fetchRoomData = async (collectionName) => {
+export const fetchData = async (collectionName) => {
   try {
     const q = query(
       collection(db, collectionName),
