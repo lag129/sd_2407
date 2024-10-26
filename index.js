@@ -23,6 +23,10 @@ const Home = () => {
   );
 };
 
+
+
+
+// ーーーーー3ページ目_マッチ結果表示ーーーーーー
 const ResultPage = () => {
   const sampleData = `[
     {
@@ -48,6 +52,14 @@ const ResultPage = () => {
   const parsedData = JSON.parse(sampleData);
   console.log(parsedData);
 
+  // 遷移用ボタンアクション
+  const navigation = useNavigate()
+  const onMovePage = () => {
+    navigation("/group");
+  }
+
+  
+
   return (
     parsedData.map((user) => {
       return (
@@ -56,6 +68,7 @@ const ResultPage = () => {
           <p>{user.shozoku}</p>
           <p>{user.tag}</p>
           <p>{user.percent}</p>
+          <button onClick={onMovePage}>グループ参加(4ページ目)</button>
         </div>
       );
     })
@@ -67,6 +80,7 @@ const App = () => (
 
     <Routes>
       <Route path="/" element={<Home />} />
+      <Route path="/meishi" element={<Meishi />} />
       <Route path="/result" element={<ResultPage />} />
       {/* 他のルートを追加する場合はここに記述 */}
     </Routes>
