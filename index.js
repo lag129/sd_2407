@@ -2,6 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import {IncorrectTextBox} from './ui/IncorrectTextBox';
 
 const App = () => {
   const useState = React.useState;
@@ -14,7 +15,9 @@ const App = () => {
       <div>
         <button onClick={handleClick}>count up</button>
       </div>
+      <IncorrectTextBox label="Input your fisrt name." />
     </div>
+
   )
 };
 
