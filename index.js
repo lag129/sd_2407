@@ -3,6 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
+import Header from './components/Header';
 import MeishiForm from './ui/MeishiForm';
 import CreateGroup from './ui/CreateGroup';
 
@@ -119,20 +120,21 @@ const GroupsankaPage = () => {
 };
 
 //　ページ遷移動作
-const App = () => (
-  <Router>
-
-    <Routes>
-      <Route path="/" element={<Home />} />
-      <Route path="/meishi" element={<Meishi />} />
-      <Route path="/result" element={<ResultPage />} />
-      <Route path="/groupmake" element={<CreateGroup />} />
-      <Route path="/groupsanka" element={<GroupsankaPage />} />
-      {/* 他のルートを追加する場合はここに記述 */}
-    </Routes>
-
-  </Router>
-);
+const App = () => {
+  return (
+    <Router>
+      <Header />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/meishi" element={<Meishi />} />
+        <Route path="/result" element={<ResultPage />} />
+        <Route path="/groupmake" element={<CreateGroup />} />
+        <Route path="/groupsanka" element={<GroupsankaPage />} />
+        {/* 他のルートを追加する場合はここに記述 */}
+      </Routes>
+    </Router>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById('app'));
 root.render(<App />);
