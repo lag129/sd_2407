@@ -1,0 +1,6 @@
+Find_Smilarity(Meishiname)
+{
+  const similarity = 0.0;
+  
+  return 0;
+}

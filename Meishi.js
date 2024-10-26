@@ -1,6 +1,8 @@
-function Meishi(name, shozoku, Tags)
+export function Meishi(name, shozoku, tags)
 {
-  this.Name = name;
-  this.Shozoku = shozoku;
-  this.Tag = Tags;
+  const meishi = {
+    Name : name,
+    Shozoku : shozoku,
+    Tags : Tags.push(tags)
+  };
 }
