@@ -1,5 +1,8 @@
 "use strict";
 
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+
 const App = () => {
   const useState = React.useState;
   const [state, setState] = useState(0)
@@ -15,6 +18,5 @@ const App = () => {
   )
 };
 
-const container = document.getElementById("app");
-const root = ReactDOM.createRoot(container);
+const root = ReactDOM.createRoot(document.getElementById('app'));
 root.render(<App />);
