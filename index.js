@@ -4,8 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import MeishiForm from './ui/MeishiForm';
-
-
+import CreateGroup from './ui/CreateGroup';
 
 //　ーーーーーーー1ページ目_ホーム欄ーーーーーーーー
 const Home = () => {
@@ -56,7 +55,7 @@ const Meishi = () => {
   return (
     <div>
       <h>プロフィール入力</h>
-      
+
       <MeishiForm />
       {/* <button onClick={addsyumi}>追加</button> */}
       <button onClick={onMovePage}>ホームに戻る</button>
@@ -111,32 +110,10 @@ const ResultPage = () => {
   );
 };
 
-
-// ーーーーグループ作成ーーーー
-const GroupMake = () => {
-
-  // 遷移用ボタンアクション
-  const navigation = useNavigate()
-  const onMovePage = () => {
-    navigation("/groupsanka");
-  }
-
-  return (
-    <div>
-      <button onClick={onMovePage}>グループ参加(4ページ目)</button>
-      <p>作成</p>
-    </div>
-  );
-};
-
-
-
-// ーーーーグループ参加ーーーー
-const GroupSanka = () => {
+const GroupsankaPage = () => {
   return (
     <div>
       <p>参加</p>
-
     </div>
   );
 };
@@ -149,8 +126,8 @@ const App = () => (
       <Route path="/" element={<Home />} />
       <Route path="/meishi" element={<Meishi />} />
       <Route path="/result" element={<ResultPage />} />
-      <Route path="/groupmake" element={<GroupMake />} />
-      <Route path="/groupsanka" element={<GroupSanka />} />
+      <Route path="/groupmake" element={<CreateGroup />} />
+      <Route path="/groupsanka" element={<GroupsankaPage />} />
       {/* 他のルートを追加する場合はここに記述 */}
     </Routes>
 
