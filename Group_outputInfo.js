@@ -1,6 +1,10 @@
-//const Group = new Group();
 import { Meishiname } from './Meishiname.js';
-Meishiname();
+function Group_outout(){
+  //const Group = new Group();
+  Meishiname();
 
-//const name = Group.createGroup();
-let name,shozoku,Tags = Meishiname();
+  //const name = Group.createGroup();
+  let name,shozoku,myTags = Meishiname();
+
+  return myTags
+}
