@@ -2,12 +2,12 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {IncorrectTextBox} from './ui/IncorrectTextBox';
+import { IncorrectTextBox } from './ui/IncorrectTextBox';
 
 const App = () => {
   const useState = React.useState;
-  const [state, setState] = useState(0)
-  const handleClick = () => setState(state + 1)
+  const [state, setState] = useState(0);
+  const handleClick = () => setState(state + 1);
 
   return (
     <div>
@@ -17,8 +17,7 @@ const App = () => {
       </div>
       <IncorrectTextBox label="Input your fisrt name." />
     </div>
-
-  )
+  );
 };
 
 const root = ReactDOM.createRoot(document.getElementById('app'));
