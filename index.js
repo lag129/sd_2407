@@ -3,7 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
-import { IncorrectTextBox } from './ui/IncorrectTextBox';
+import MeishiForm from './ui/MeishiForm';
 
 
 const Home = () => {
@@ -17,9 +17,7 @@ const Home = () => {
       <div>
         <button onClick={handleClick}>count up</button>
       </div>
-      <IncorrectTextBox label="名前：" />
-      <IncorrectTextBox label="所属：" />
-      <IncorrectTextBox label="趣味などを入力" />
+      <MeishiForm />
       {/* <button onClick={addsyumi}>追加</button> */}
     </div>
   );
