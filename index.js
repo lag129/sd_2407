@@ -7,34 +7,6 @@ import Header from './components/Header';
 import MeishiForm from './ui/MeishiForm';
 import CreateGroup from './ui/CreateGroup';
 import JoinGroup from './ui/JoinGroup';
-import { addRoomData, fetchRoomData } from './backend/fetch';
-
-// データの追加
-const handleSubmit = async (e) => {
-  e.preventDefault();
-  const newData = {
-    name: "hoge",
-    shozoku: "東北工業大学",
-    tag: ["プログラミング", "ハッカソン"]
-  };
-  
-  try {
-    const docId = await addRoomData("posts", newData);
-    console.log("追加成功:", docId);
-  } catch (error) {
-    console.error("追加エラー:", error);
-  }
-};
-
-// データの取得
-const loadData = async () => {
-  try {
-    const documents = await fetchRoomData("posts");
-    console.log("取得したデータ:", documents);
-  } catch (error) {
-    console.error("取得エラー:", error);
-  }
-};
 
 //　ーーーーーーー1ページ目_ホーム欄ーーーーーーーー
 const Home = () => {
@@ -83,9 +55,7 @@ const Home = () => {
       <button onClick={onMovePage3}>入る</button><br></br><br></br>
 
 
-      <button onClick={onMovePage}>プロフィール入力(2ページ目)へ</button>
-      <button onClick={handleSubmit}>Add</button>
-      <button onClick={loadData}>Load</button>
+      <button onClick={onMovePage1}>プロフィール入力(2ページ目)へ</button>
     </div>
   );
 };
