@@ -5,6 +5,8 @@ import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import MeishiForm from './ui/MeishiForm';
 
+
+
 //　ーーーーーーー1ページ目_ホーム欄ーーーーーーーー
 const Home = () => {
   // 遷移用ボタンアクション
@@ -110,21 +112,31 @@ const ResultPage = () => {
 };
 
 
-const groupmakePage = () => {
+// ーーーーグループ作成ーーーー
+const GroupMake = () => {
+
+  // 遷移用ボタンアクション
+  const navigation = useNavigate()
+  const onMovePage = () => {
+    navigation("/groupsanka");
+  }
 
   return (
     <div>
-      
+      <button onClick={onMovePage}>グループ参加(4ページ目)</button>
       <p>作成</p>
     </div>
   );
 };
 
-const groupsankaPage = () => {
+
+
+// ーーーーグループ参加ーーーー
+const GroupSanka = () => {
   return (
     <div>
-      
       <p>参加</p>
+
     </div>
   );
 };
@@ -137,8 +149,8 @@ const App = () => (
       <Route path="/" element={<Home />} />
       <Route path="/meishi" element={<Meishi />} />
       <Route path="/result" element={<ResultPage />} />
-      <Route path="/groupmake" element={<groupmakePage />} />
-      <Route path="/groupsanka" element={<groupsankaPage />} />
+      <Route path="/groupmake" element={<GroupMake />} />
+      <Route path="/groupsanka" element={<GroupSanka />} />
       {/* 他のルートを追加する場合はここに記述 */}
     </Routes>
 
