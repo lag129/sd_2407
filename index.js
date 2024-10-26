@@ -47,6 +47,7 @@ const Home = () => {
         </div>
       )}
 
+      <button onClick={onMovePage1}>プロフィール入力へ</button>
       <br></br>
       <p>グループ</p>
       <button onClick={onMovePage2}>作る</button>
