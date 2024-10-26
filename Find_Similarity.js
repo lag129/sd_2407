@@ -1,6 +1,6 @@
 //テストデータ
-tags1 = ['aaa','bbb','CCC'];
-tags2 = ['aaa','bbb','CCC'];
+//tags1 = ['aaa','bbb','CCC'];
+//tags2 = ['aaa','bbb','CCC'];
 function Find_Smilarity(mytags,yourtags)
 {
   //2つの配列の共通要素を出力   
