@@ -2,65 +2,23 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { BrowserRouter as Router, Route, Routes, useNavigate} from 'react-router-dom';
-import { IncorrectTextBox } from './ui/IncorrectTextBox';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import MeishiForm from './ui/MeishiForm';
 
 
-//　ーーーーーーー1ページ目_ホーム欄ーーーーーーーー
-const Home = () =>{
-
-
-  // 遷移用ボタンアクション
-  const navigation = useNavigate()
-  const onMovePage = () => {
-    navigation("/meishi");
-  }
-
-  return (
-    <div>
-      <p>あなたの名刺データ</p>
-      <p>名前：</p>
-      <p>所属：</p>
-      <p>趣味：</p>
-
-      <br></br>
-      <p>グループ</p>
-      <button>作る</button>
-      <button>入る</button><br></br><br></br>
-
-
-      <button onClick={onMovePage}>プロフィール入力(2ページ目)へ</button>
-    </div>
-  );
-
-}
-
-
-
-//　ーーーーーーー2ページ目_名刺入力欄ーーーーーーーー
-const Meishi = () => {
+const Home = () => {
   const useState = React.useState;
   const [state, setState] = useState(0);
   const handleClick = () => setState(state + 1);
 
-  // 遷移用ボタンアクション
-  const navigation = useNavigate()
-  const onMovePage = () => {
-    navigation("/result");
-  }
-
   return (
     <div>
-      <h>プロフィール入力</h>
       <p>カウント: {state}</p>
       <div>
         <button onClick={handleClick}>count up</button>
       </div>
-      <IncorrectTextBox label="名前：" />
-      <IncorrectTextBox label="所属：" />
-      <IncorrectTextBox label="趣味などを入力" />
+      <MeishiForm />
       {/* <button onClick={addsyumi}>追加</button> */}
-      <button onClick={onMovePage}>マッチ結果(3ページ目)へ</button>
     </div>
   );
 };
@@ -117,15 +75,6 @@ const ResultPage = () => {
   );
 };
 
-
-const groupPage = () => {
-  return (
-    <p>４ページ目</p>
-  );
-};
-
-
-//　ページ遷移動作
 const App = () => (
   <Router>
 
@@ -133,7 +82,6 @@ const App = () => (
       <Route path="/" element={<Home />} />
       <Route path="/meishi" element={<Meishi />} />
       <Route path="/result" element={<ResultPage />} />
-      <Route path="/group" element={<groupPage />} />
       {/* 他のルートを追加する場合はここに記述 */}
     </Routes>
 
