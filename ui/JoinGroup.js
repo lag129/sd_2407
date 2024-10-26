@@ -3,13 +3,16 @@
 import React from 'react';
 import { addRoomData, fetchRoomData } from '../backend/fetch';
 
-// データの追加
+/**
+ * ローカルストレージのデータをサーバーへ送信 
+ */
 const handleSubmit = async (e) => {
   e.preventDefault();
   // ローカルストレージからデータを取得
-  const newData = localStorage.getItem("myMeishiData");
+  const myData = localStorage.getItem("myMeishiData");
+  const data = JSON.parse(myData);
   try {
-    const docId = await addRoomData("posts", newData);
+    const docId = await addRoomData("posts", data);
     console.log("追加成功:", docId);
   } catch (error) {
     console.error("追加エラー:", error);
