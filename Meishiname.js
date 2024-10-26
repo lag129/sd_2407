@@ -1,10 +1,10 @@
 function Meishiname() {
-  const nameInput = document.getElementById('nameInput');
-  const shozokuInput = document.getElementById('shozokuInput');
-  const TagsInput = document.getElementById('TagsInput');
+  let nameInput = document.getElementById('nameInput');
+  let shozokuInput = document.getElementById('shozokuInput');
+  let TagsInput = document.getElementById('TagsInput');
 
-  const name = nameInput.value;
-  const shozoku = shozokuInput.value;
-	const Tags = TagsInput.value;
+  let name = nameInput.value;
+  let shozoku = shozokuInput.value;
+	let Tags = TagsInput.value;
   return(name,shozoku,Tags);
 }
