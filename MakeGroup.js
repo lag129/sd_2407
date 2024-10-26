@@ -1,9 +1,11 @@
+import { generateSix } from './IDgenerate.js';
 class Group{
-  import { generateSix } from './IDgenerate.js';
-  constructor(name)
+  Group(name)
   {
     this.name = name;
     this.id = generateSix();
     this.members = [];
   }
+
+  
 }

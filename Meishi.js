@@ -1,4 +1,4 @@
-function Meishi(name, shozoku, Tags) 
+export function Meishi(name, shozoku, Tags) 
 {
   this.Name = name;
   this.Shozoku = shozoku;
