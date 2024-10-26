@@ -3,7 +3,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { IncorrectTextBox } from './ui/IncorrectTextBox';
-import { addsyumi } from './ui/addsyumi';
+// import { addsyumi } from './ui/addsyumi';
 
 const App = () => {
   const useState = React.useState;
@@ -18,11 +18,11 @@ const App = () => {
       <div>
         <button onClick={handleClick}>count up</button>
       </div>
-        <IncorrectTextBox label="名前：" />
-        <IncorrectTextBox label="所属：" />
-        <IncorrectTextBox label="趣味などを入力" />
-        <button onClick={addsyumi}>追加</button>
-        
+      <IncorrectTextBox label="名前：" />
+      <IncorrectTextBox label="所属：" />
+      <IncorrectTextBox label="趣味などを入力" />
+      <button onClick={addsyumi}>追加</button>
+
     </div>
   );
 };
