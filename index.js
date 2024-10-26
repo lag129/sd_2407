@@ -73,8 +73,7 @@ const Meishi = () => {
 
   return (
     <div>
-      <h>プロフィール入力</h>
-
+      <h1>プロフィール入力</h1>
       <MeishiForm />
       {/* <button onClick={addsyumi}>追加</button> */}
       <button onClick={onMovePage}>ホームに戻る</button>
