@@ -4,6 +4,34 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import MeishiForm from './ui/MeishiForm';
+import { addRoomData, fetchRoomData } from './backend/fetch';
+
+// データの追加
+const handleSubmit = async (e) => {
+  e.preventDefault();
+  const newData = {
+    name: "hoge",
+    shozoku: "東北工業大学",
+    tag: ["プログラミング", "ハッカソン"]
+  };
+  
+  try {
+    const docId = await addRoomData("posts", newData);
+    console.log("追加成功:", docId);
+  } catch (error) {
+    console.error("追加エラー:", error);
+  }
+};
+
+// データの取得
+const loadData = async () => {
+  try {
+    const documents = await fetchRoomData("posts");
+    console.log("取得したデータ:", documents);
+  } catch (error) {
+    console.error("取得エラー:", error);
+  }
+};
 
 //　ーーーーーーー1ページ目_ホーム欄ーーーーーーーー
 const Home = () => {
@@ -27,6 +55,8 @@ const Home = () => {
 
 
       <button onClick={onMovePage}>プロフィール入力(2ページ目)へ</button>
+      <button onClick={handleSubmit}>Add</button>
+      <button onClick={loadData}>Load</button>
     </div>
   );
 };
