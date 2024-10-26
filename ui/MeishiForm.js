@@ -6,7 +6,12 @@ const handleSubmit = (event) => {
   const name = form.get("name") || "";
   const shozoku = form.get("shozoku") || "";
   const tags = form.get("tags") || "";
-  console.log(`名前: ${name}\n所属: ${shozoku}\nタグ: ${tags}`);
+  const jsonData = {
+    name,
+    shozoku,
+    tags: tags.split(" "),
+  };
+  console.log(jsonData);
 };
 
 export default function MeishiForm() {
