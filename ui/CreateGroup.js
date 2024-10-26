@@ -3,10 +3,13 @@
 import React from 'react';
 import { addData } from '../backend/fetch';
 
+/**
+ * 100000から999999までのランダムな整数を作成
+ * @returns int ランダムな整数
+ */
 const generateID = () => {
-  // 100000から999999までのランダムな整数を作成
   const randomNum = Math.floor(Math.random() * 900000) + 100000;
-  return randomNum.toString();
+  return randomNum;
 }
 
 const id = generateID();
