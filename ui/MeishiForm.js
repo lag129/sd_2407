@@ -11,7 +11,8 @@ const handleSubmit = (event) => {
     shozoku,
     tags: tags.split(" "),
   };
-  console.log(jsonData);
+  // ローカルストレージに保存
+  localStorage.setItem("myMeishiData", JSON.stringify(jsonData));
 };
 
 export default function MeishiForm() {
