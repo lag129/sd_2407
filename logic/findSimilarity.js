@@ -21,7 +21,7 @@ const findSmilarity = (mytags, yourtags) => {
   // 配列の最大長さを計算
   const maxLength = Math.max(mytags.length, yourtags.length);
 
-  console.log((commonCount / maxLength) * 100);
+  // console.log((commonCount / maxLength) * 100);
   // 類似度をパーセンテージで計算   
   return (commonCount / maxLength) * 100;
 }
