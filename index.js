@@ -25,54 +25,44 @@ const Home = () => {
   );
 };
 
-const sample_data = `[
-{
-"name": "hoge",
-"shozoku": "東北工業大学",
-"tag": [
-      "プログラミング",
-      "ハッカソン"
-    ],
-    "percent": 90
-},
-{
-"name": "hoge",
-"shozoku": "東北工業大学",
-"tag": [
-      "プログラミング",
-      "ハッカソン"
-    ],
-    "percent": 90
-}
-]`;
+const ResultPage = () => {
+  const sampleData = `[
+    {
+      "name": "hoge",
+      "shozoku": "東北工業大学",
+      "tag": [
+        "プログラミング",
+        "ハッカソン"
+      ],
+      "percent": 90
+    },
+    {
+      "name": "fuga",
+      "shozoku": "東北大学",
+      "tag": [
+        "料理",
+        "見た目"
+      ],
+      "percent": 30
+    }
+  ]`;
 
-const userObject = JSON.parse(sample_data);
-
-const ResultPage = (userObject) =>{
-  const useState = React.useState;
+  const parsedData = JSON.parse(sampleData);
+  console.log(parsedData);
 
   return (
-    <div>
-      <p>マッチング結果</p>
-      <p>Name: ${userObject[0].name}</p>
-
-      
-      <button >プロフィールを表示</button>
-      
-
-      <p>2.(ここにマッチング率を表示)</p>
-      <button >プロフィールを表示</button>
-      
-
-      <p>3.(ここにマッチング率を表示)</p>
-      <button >プロフィールを表示</button>
-      
-
-    </div>
-
+    parsedData.map((user) => {
+      return (
+        <div>
+          <p>{user.name}</p>
+          <p>{user.shozoku}</p>
+          <p>{user.tag}</p>
+          <p>{user.percent}</p>
+        </div>
+      );
+    })
   );
-
-}
+};
 
 const App = () => (
   <Router>
@@ -82,7 +72,7 @@ const App = () => (
       <Route path="/result" element={<ResultPage />} />
       {/* 他のルートを追加する場合はここに記述 */}
     </Routes>
-    
+
   </Router>
 );
 
