@@ -6,6 +6,7 @@ import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-route
 import Header from './components/Header';
 import MeishiForm from './ui/MeishiForm';
 import CreateGroup from './ui/CreateGroup';
+import JoinGroup from './ui/JoinGroup';
 
 //　ーーーーーーー1ページ目_ホーム欄ーーーーーーーー
 const Home = () => {
@@ -127,14 +128,6 @@ const ResultPage = () => {
   );
 };
 
-const GroupsankaPage = () => {
-  return (
-    <div>
-      <p>参加</p>
-    </div>
-  );
-};
-
 //　ページ遷移動作
 const App = () => {
   return (
@@ -145,7 +138,7 @@ const App = () => {
         <Route path="/meishi" element={<Meishi />} />
         <Route path="/result" element={<ResultPage />} />
         <Route path="/groupmake" element={<CreateGroup />} />
-        <Route path="/groupsanka" element={<GroupsankaPage />} />
+        <Route path="/groupsanka" element={<JoinGroup />} />
         {/* 他のルートを追加する場合はここに記述 */}
       </Routes>
     </Router>
