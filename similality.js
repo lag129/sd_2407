@@ -12,8 +12,6 @@ function Find_Smilarity(){
       }
     }
   }
+  length = mylen + yourlen - simicount;
+  similality = simicount / length * 100;
 }
-
-length = mylen + yourlen - simicount;
-
-similality = simicount / length * 100;
