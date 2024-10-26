@@ -13,18 +13,34 @@ const Home = () => {
     navigation("/meishi");
   }
 
+  const [data, setdata] = React.useState([]);
+  // ローカルストレージからデータを取得
+  React.useEffect(() => {
+    const jsonData = localStorage.getItem("myMeishiData");
+    if (jsonData) {
+      setdata(JSON.parse(jsonData));
+    };
+  }, []);
+
   return (
     <div>
-      <p>あなたの名刺データ</p>
-      <p>名前：</p>
-      <p>所属：</p>
-      <p>趣味：</p>
+      <h1>あなたの名刺データ</h1>
+      {data ? (
+        <div>
+          <p>名前：{data.name}</p>
+          <p>所属：{data.shozoku}</p>
+          <p>タグ：{data.tags}</p>
+        </div>
+      ) : (
+        <div>
+          <p>情報が入力されていません</p>
+        </div>
+      )}
 
       <br></br>
       <p>グループ</p>
       <button>作る</button>
       <button>入る</button><br></br><br></br>
-
 
       <button onClick={onMovePage}>プロフィール入力(2ページ目)へ</button>
     </div>
