@@ -9,8 +9,16 @@ import MeishiForm from './ui/MeishiForm';
 const Home = () => {
   // 遷移用ボタンアクション
   const navigation = useNavigate()
-  const onMovePage = () => {
+  const onMovePage1 = () => {
     navigation("/meishi");
+  }
+
+  const onMovePage2 = () => {
+    navigation("/groupmake");
+  }
+
+  const onMovePage3 = () => {
+    navigation("/groupsanka");
   }
 
   return (
@@ -20,13 +28,14 @@ const Home = () => {
       <p>所属：</p>
       <p>趣味：</p>
 
+      <button onClick={onMovePage1}>プロフィール入力へ</button>
+
       <br></br>
       <p>グループ</p>
-      <button>作る</button>
-      <button>入る</button><br></br><br></br>
+      <button onClick={onMovePage2}>作る</button>
+      <button onClick={onMovePage3}>入る</button><br></br><br></br>
 
 
-      <button onClick={onMovePage}>プロフィール入力(2ページ目)へ</button>
     </div>
   );
 };
@@ -35,24 +44,20 @@ const Home = () => {
 const Meishi = () => {
   const useState = React.useState;
   const [state, setState] = useState(0);
-  const handleClick = () => setState(state + 1);
 
   // 遷移用ボタンアクション
   const navigation = useNavigate()
   const onMovePage = () => {
-    navigation("/result");
+    navigation("/");
   }
 
   return (
     <div>
       <h>プロフィール入力</h>
-      <p>カウント: {state}</p>
-      <div>
-        <button onClick={handleClick}>count up</button>
-      </div>
+      
       <MeishiForm />
       {/* <button onClick={addsyumi}>追加</button> */}
-      <button onClick={onMovePage}>マッチ結果(3ページ目)へ</button>
+      <button onClick={onMovePage}>ホームに戻る</button>
     </div>
   );
 };
@@ -105,9 +110,22 @@ const ResultPage = () => {
 };
 
 
-const groupPage = () => {
+const groupmakePage = () => {
+
   return (
-    <p>４ページ目</p>
+    <div>
+      
+      <p>作成</p>
+    </div>
+  );
+};
+
+const groupsankaPage = () => {
+  return (
+    <div>
+      
+      <p>参加</p>
+    </div>
   );
 };
 
@@ -119,7 +137,8 @@ const App = () => (
       <Route path="/" element={<Home />} />
       <Route path="/meishi" element={<Meishi />} />
       <Route path="/result" element={<ResultPage />} />
-      <Route path="/group" element={<groupPage />} />
+      <Route path="/groupmake" element={<groupmakePage />} />
+      <Route path="/groupsanka" element={<groupsankaPage />} />
       {/* 他のルートを追加する場合はここに記述 */}
     </Routes>
 
