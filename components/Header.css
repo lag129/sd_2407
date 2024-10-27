@@ -1,10 +1,23 @@
-.text
+
+
+
+.button_Header 
 {
-  color:aqua;
+  display: block;
+  color: #d31f1f;
+  
+  /*background-image:url(./img/An1_png.png);  CSSで画像を表示するテスト*/
+  width: 300px;
+  height: 200px;
+  
 }
 
-.img
+
+.button_Header img
 {
-  max-width : 10%;
-  height : auto;
+  background-color: #d31f1f;
+  width: 300px;
+  height: 200px;
+  
+  
 }

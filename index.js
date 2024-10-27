@@ -63,9 +63,9 @@ const Home = () => {
         <br></br>
         <h3>グループ</h3>
         <button className={styles.button_Group} onClick={onMovePage2}>作る</button>
-        <button className={styles.button_Group} onClick={onMovePage3}>入る</button><br></br><br></br>
+        <button className={styles.button_Group} onClick={onMovePage3}>参加</button><br></br><br></br>
       </div>
-      <button onClick={onMovePage1}>プロフィール入力(2ページ目)へ</button>
+      
     </div>
   );
 };
@@ -79,8 +79,8 @@ const Meishi = () => {
   }
 
   return (
-    <div className={styles.button_Center}>
-      <h>プロフィール入力</h>
+    <div className={styles.button_prof}>
+      <h1>プロフィールを入力</h1>
 
       <MeishiForm />
       {/* <button onClick={addsyumi}>追加</button> */}

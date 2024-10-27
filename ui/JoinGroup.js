@@ -4,6 +4,7 @@ import React from 'react';
 import { addDataToExistingRoom, fetchData } from '../backend/fetch';
 import { useNavigate } from 'react-router-dom';
 import styles from './JoinGroup.css';
+import styles1 from "../JoinGroup.module.css";
 
 const handleFormSubmit = (event) => {
   event.preventDefault();
@@ -41,16 +42,18 @@ const loadData = async () => {
 
 const JoinGroup = () => {
   return (
-    <div className={styles.title}>
-      <div className = {styles.aaa}>
-      <h1>グループに参加</h1>
-      <p>グループIDを入力してください</p>
-      <form onSubmit={handleFormSubmit}>
-        <input type="text" name="id" />
-        <button type="submit">参加する</button>
-      </form>
-       {/* <button onClick={loadData}>フェッチ</button> */}
+    <div className={styles1.button__Join}>
+
+      <div className={styles1.button_Sa}>
+        <h1>グループに参加</h1>
+        <p>グループIDを入力してください</p>
+        <form onSubmit={handleFormSubmit}>
+          <input type="text" name="id" />
+          <button type="submit">参加する</button>
+        </form>
+        {/* <button onClick={loadData}>フェッチ</button> */}
       </div>
+
     </div>
   );
 };
