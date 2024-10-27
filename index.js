@@ -149,6 +149,7 @@ const App = () => {
         <Route path="/groupsanka" element={<JoinGroup />} />
         {/* 他のルートを追加する場合はここに記述 */}
       </Routes>
+      <footer />
     </Router>
   );
 };
