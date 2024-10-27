@@ -1,5 +1,39 @@
-// @ts-check
 "use strict";
+
+import React from "react";
+import { addRoomData, fetchRoomData } from "../backend/fetch";
+
+// firebaseからuseStateでデータを取得
+export const useFetchData = (collectionName) => {
+  const [data, setData] = React.useState([]);
+  const [loading, setLoading] = React.useState(true);
+
+  React.useEffect(() => {
+    const fetchData = async () => {
+      const result = await fetchRoomData(collectionName);
+      setData(result);
+      setLoading(false);
+    };
+    fetchData();
+  }, [collectionName]);
+
+  return { data, loading };
+};
+
+const fetchedData = useFetchData("posts");
+// JSONに変換する
+const jsonData = JSON.stringify(fetchedData, null, 2);
+
+// ローカルストレージから自分のデータを取得
+const myData = localStorage.getItem("myMeishiData");
+// JSONに変換する
+const myJsonData = JSON.stringify(myData, null, 2);
+
+// 類似度計算関数
+// JSON配列のtagを全通り比較して、類似度を計算する
+jsonData.forEach((yourData) => {
+  console.log(findSmilarity(myJsonData.tags, yourData.tags));
+});
 
 // テストデータ
 // const tags1 = ['aaa','bbb','CCC'];
