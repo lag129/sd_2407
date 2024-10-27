@@ -90,11 +90,13 @@ const Meishi = () => {
 
 // ーーーーー3ページ目_マッチ結果表示ーーーーーー
 const ResultPage = () => {
+  // ローカルストレージからidを取得
+  const id = localStorage.getItem("groupId");
   const [data, setData] = React.useState([]);
   React.useEffect(() => {
     const loadData = async () => {
       try {
-        setData(await fetchDataFromFirebase('123456'));
+        setData(await fetchDataFromFirebase(id));
       } catch (error) {
         console.error('データの取得に失敗しました:', error);
       }
@@ -119,15 +121,17 @@ const ResultPage = () => {
     navigation("/group");
   }
 
+  const sortedData = data.sort((a, b) => b.percent - a.percent);
+
   return (
     <div>
       <ul>
-        {data.map((item, index) => (
+        {sortedData.map((item, index) => (
           <li key={index}>
-            <p>マッチ率 {item.percent}%</p>
+            <p>マッチ率 {parseInt(item.percent, 10)}%</p>
             <p>{item.name}</p>
             <p>{item.shozoku}</p>
-            <p>{item.tags}</p>
+            <p>{item.tags.join(' ')}</p>
           </li>
         ))}
       </ul>

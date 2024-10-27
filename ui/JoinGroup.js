@@ -2,13 +2,17 @@
 
 import React from 'react';
 import { addDataToExistingRoom, fetchData } from '../backend/fetch';
+import { useNavigate } from 'react-router-dom';
 
 const handleFormSubmit = (event) => {
   event.preventDefault();
   const form = new FormData(event.currentTarget);
   const id = form.get("id") || "";
   // ローカルストレージに保存
+  localStorage.setItem("groupId", id);
   handleSubmit(id);
+  const navigate = useNavigate();
+  navigate("/result");
 };
 
 const handleSubmit = async (id) => {
