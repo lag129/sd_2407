@@ -1,6 +1,6 @@
 # なにはな
 
-[![IMAGE ALT TEXT HERE](https://jphacks.com/wp-content/uploads/2024/07/JPHACKS2024_ogp.jpg)](https://www.youtube.com/watch?v=DZXUkEj-CSI)
+![なにはな](https://github.com/user-attachments/assets/22e64742-815e-4692-b199-13d0248e0cf8)
 
 ## 製品概要
 ### 背景(製品開発のきっかけ、課題等）
