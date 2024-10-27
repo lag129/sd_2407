@@ -2,11 +2,13 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import Header from './components/Header';
 import MeishiForm from './ui/MeishiForm';
 import CreateGroup from './ui/CreateGroup';
 import JoinGroup from './ui/JoinGroup';
+import { fetchDataFromFirebase } from './backend/fetch';
 
 //　ーーーーーーー1ページ目_ホーム欄ーーーーーーーー
 const Home = () => {
@@ -24,7 +26,7 @@ const Home = () => {
     navigation("/groupsanka");
   }
 
-  const [data, setdata] = React.useState([]);
+  const [data, setdata] = useState([]);
   // ローカルストレージからデータを取得
   React.useEffect(() => {
     const jsonData = localStorage.getItem("myMeishiData");
@@ -83,29 +85,19 @@ const Meishi = () => {
 
 // ーーーーー3ページ目_マッチ結果表示ーーーーーー
 const ResultPage = () => {
-  const sampleData = `[
-    {
-      "name": "hoge",
-      "shozoku": "東北工業大学",
-      "tag": [
-        "プログラミング",
-        "ハッカソン"
-      ],
-      "percent": 90
-    },
-    {
-      "name": "fuga",
-      "shozoku": "東北大学",
-      "tag": [
-        "料理",
-        "見た目"
-      ],
-      "percent": 30
-    }
-  ]`;
-
-  const parsedData = JSON.parse(sampleData);
-  console.log(parsedData);
+  const [data, setData] = React.useState([]);
+  React.useEffect(() => {
+    const loadData = async () => {
+      try {
+        const fetchedData = await fetchDataFromFirebase('123456');
+        console.log('データの取得に成功しました:', fetchedData);
+        setData(fetchedData);
+      } catch (error) {
+        console.error('データの取得に失敗しました:', error);
+      }
+    };
+    loadData();
+  }, []);
 
   // 遷移用ボタンアクション
   const navigation = useNavigate()
@@ -114,17 +106,19 @@ const ResultPage = () => {
   }
 
   return (
-    parsedData.map((user) => {
-      return (
-        <div>
-          <p>{user.name}</p>
-          <p>{user.shozoku}</p>
-          <p>{user.tag}</p>
-          <p>{user.percent}</p>
-          <button onClick={onMovePage}>グループ参加(4ページ目)</button>
-        </div>
-      );
-    })
+    <div>
+      <ul>
+        {data.map((item, index) => (
+          <li key={index}>
+            <p>{item.name}</p>
+            <p>{item.shozoku}</p>
+            <p>{item.tags}</p>
+            {/* <p>percent</p> */}
+          </li>
+        ))}
+      </ul>
+      <button onClick={onMovePage}>グループ参加(4ページ目)</button>
+    </div>
   );
 };
 

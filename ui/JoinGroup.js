@@ -1,19 +1,16 @@
 "use strict";
 
 import React from 'react';
-import { addData, fetchData } from '../backend/fetch';
+import { addDataToFirebase, fetchData } from '../backend/fetch';
 
-/**
- * ローカルストレージのデータをサーバーへ送信 
- */
 const handleSubmit = async (e) => {
   e.preventDefault();
   // ローカルストレージからデータを取得
   const myData = localStorage.getItem("myMeishiData");
   const data = JSON.parse(myData);
   try {
-    const docId = await addData("posts", data);
-    console.log("追加成功:", docId);
+    await addDataToFirebase("123456", data);
+    console.log("追加成功");
   } catch (error) {
     console.error("追加エラー:", error);
   }
@@ -30,7 +27,7 @@ const loadData = async () => {
 };
 
 const JoinGroup = () => {
-  return(
+  return (
     <div>
       <h1>グループに参加</h1>
       <p>グループIDを入力してください</p>
