@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { addDataToFirebase, fetchData } from '../backend/fetch';
+import styles from './JoinGroup.css';
 
 const handleFormSubmit = (event) => {
   event.preventDefault();
@@ -36,14 +37,16 @@ const loadData = async () => {
 
 const JoinGroup = () => {
   return (
-    <div>
-      <h1>グループに参加</h1>
-      <p>グループIDを入力してください</p>
-      <form onSubmit={handleFormSubmit}>
-        <input type="text" name="id" />
-        <button type="submit">参加する</button>
-      </form>
-      {/* <button onClick={loadData}>フェッチ</button> */}
+    <div className={styles.title}>
+      <div className = {styles.aaa}>
+       <h1>グループに参加</h1>
+       <p>グループIDを入力してください</p>
+       <form onSubmit={handleFormSubmit}>
+         <input type="text" name="id" />
+         <button type="submit">参加する</button>
+       </form>
+       {/* <button onClick={loadData}>フェッチ</button> */}
+      </div>
     </div>
   );
 };
