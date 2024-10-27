@@ -1,4 +1,3 @@
-// @ts-check
 "use strict";
 
 // テストデータ
@@ -12,7 +11,7 @@
  * @param {Array<string>} yourtags 
  * @returns int 類似度
  */
-const findSmilarity = (mytags, yourtags) => {
+export const findSmilarity = (mytags, yourtags) => {
   // 2つの配列の共通要素を出力   
   const result = mytags.filter(element => yourtags.includes(element));
   // 共通の要素の数を計算
