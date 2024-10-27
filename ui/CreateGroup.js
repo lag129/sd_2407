@@ -1,7 +1,7 @@
 "use strict";
 
 import React from 'react';
-import { addDataToFirebase, createRoom } from '../backend/fetch';
+import { addDataToFirebase } from '../backend/fetch';
 
 /**
  * 100000から999999までのランダムな整数を作成
