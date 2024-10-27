@@ -1,19 +1,59 @@
-.title{
-  display: block;
-  position: relative;
-  text-align: center;
-  margin: auto;
-  padding: auto;
-  width: 50%;
-  min-height: 89vh;
-
+.title {
+  display: block;  /* 要素をブロック表示に設定 */
+  position: relative;  /* 要素の位置を相対的に設定 */
+  text-align: center;  /* テキストを中央揃えに設定 */
+  margin: auto;  /* マージンを自動設定 */
+  padding: 20px;  /* 内側の余白を20ピクセルに設定 */
+  width: 50%;  /* 要素の幅を50%に設定 */
+  min-height: 89vh;  /* 要素の最小高さをビューポートの高さの89%に設定 */
 }
-.aaa h1{
-  display: inline-block;
-  position: relative;
-  text-align: center;
-  margin: auto;
-  padding: auto;
-  width: 50%;
-  height: 89px;
+
+.aaa {
+  display: block;  /* 要素をブロック表示に設定 */
+  position: relative;  /* 要素の位置を相対的に設定 */
+  text-align: center;  /* テキストを中央揃えに設定 */
+  margin: auto;  /* マージンを自動設定 */
+  padding: 20px;  /* 内側の余白を20ピクセルに設定 */
+  width: 50%;  /* 要素の幅を50%に設定 */
+  min-height: 100px;  /* 要素の最小高さを100ピクセルに設定 */
+}
+
+.aaa h1 {
+  display: inline-block;  /* 要素をインラインブロック表示に設定 */
+  position: relative;  /* 要素の位置を相対的に設定 */
+  text-align: center;  /* テキストを中央揃えに設定 */
+  margin: 20px auto;  /* 上下に20ピクセル、左右に自動設定のマージン */
+  padding: 10px;  /* 内側の余白を10ピクセルに設定 */
+  width: auto;  /* 幅を自動設定 */
+  height: auto;  /* 高さを自動設定 */
+}
+
+.aaa p {
+  margin: 20px 0;  /* 上下に20ピクセルのマージン */
+  font-size: 1.2em;  /* フォントサイズを1.2emに設定 */
+}
+
+.aaa form {
+  margin-top: 20px;  /* 上に20ピクセルのマージン */
+}
+
+.aaa input[type="text"] {
+  width: 80%;  /* 幅を80%に設定 */
+  padding: 10px;  /* 内側の余白を10ピクセルに設定 */
+  margin-bottom: 20px;  /* 下に20ピクセルのマージン */
+  border: 1px solid #ccc;  /* 1ピクセルの薄いグレーのボーダー */
+  border-radius: 5px;  /* 5ピクセルの角丸ボーダー */
+}
+
+.aaa button {
+  padding: 10px 20px;  /* 上下に10ピクセル、左右に20ピクセルの内側の余白 */
+  background-color: #007BFF;  /* ボタンの背景色を青に設定 */
+  color: white;  /* テキスト色を白に設定 */
+  border: none;  /* ボーダーなし */
+  border-radius: 5px;  /* 5ピクセルの角丸ボーダー */
+  cursor: pointer;  /* カーソルをポインタに設定 */
+}
+
+.aaa button:hover {
+  background-color: #0056b3;  /* ホバー時の背景色を濃い青に設定 */
 }
