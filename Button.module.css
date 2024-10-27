@@ -8,7 +8,7 @@
   background-repeat: repeat;
   text-align: center;
   width: 100%;
-  min-height: 89vh;
+  min-height: 76vh;
  
   
 }
@@ -22,7 +22,7 @@
   display: block;
   position: relative;
   /*background-color: #252524; 画像のブロックの要素がどのくらいの範囲か確認できる*/
-
+  
   text-align: center;
   margin: auto;
   padding: auto;
@@ -77,13 +77,14 @@
   margin-top: 20px;
   margin: 10px auto;
   font-size: 20px;
+  border: none;
   color:rgb(77, 76, 76);
   padding: 15px 20px;
   border-radius: 10px;
   font-family: 'sans-serif';
   box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-  background-color: #e9a4e9;
+  background-color: #ffefff;
 }
 /* ↑のマウスが重なった時のボタンの色や動き */
 .button:hover {
@@ -97,13 +98,14 @@
   height: 45px;
   margin-top: 5px;
   font-size: 20px;
+  border: none;
   color:rgb(77, 76, 76);
   padding: 9px 20px;
   border-radius: 10px;
   font-family: 'sans-serif';
   box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.3);
   transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-  background-color: #e9a4e9;
+  background-color: #ffe3f3;
 }
 /* ↑のマウスが重なった時のボタンの色や動き */
 .button_Group:hover {
@@ -127,14 +129,14 @@
 .button_Back{
   position: relative;
   display: inline-block;
-  padding: 0.25em 0.5em;
+  padding: 0.4em 0.6em;
   text-decoration: none;
-  color: #FFF;
-  background: #fd9535;/*色*/
-  border-radius: 4px;/*角の丸み*/
+  color: #4d4d4d;
+  background: #e6e6e6;/*色*/
+  border-radius: 20px;/*角の丸み*/
   box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
   font-weight: bold;
-  border: solid 2px #d27d00;/*線色*/
+  border: solid 2px #6b6b6b;/*線色*/
 }
 
 .button_Back:active {
@@ -142,24 +144,12 @@
   box-shadow: 0 0 2px rgba(0, 0, 0, 0.30);
 }
 
-.button_Back{
-  position: relative;
-  display: inline-block;
-  padding: 0.25em 0.5em;
-  text-decoration: none;
-  color: #FFF;
-  background: #fd9535;/*色*/
-  border-radius: 4px;/*角の丸み*/
-  box-shadow: inset 0 2px 0 rgba(255,255,255,0.2), inset 0 -2px 0 rgba(0, 0, 0, 0.05);
-  font-weight: bold;
-  border: solid 2px #d27d00;/*線色*/
-}
 
 
 .button_ID {
   display: block;
   position: relative;
-  background-color: #e6b073;
+  background-color: #ffffff;
   /*background-image:url(./img/An1_png.png);  CSSで画像を表示するテスト*/
   background-size: cover;
   background-repeat: repeat;
@@ -172,36 +162,18 @@
   font-size: 50px;
 }
 
-.button_Group {
-  width: 15%;
-  height: 55px;
-  margin-top: 5px;
-  font-size: 20px;
-  color:rgb(77, 76, 76);
-  padding: 9px 20px;
-  border-radius: 10px;
-  font-family: 'sans-serif';
-  box-shadow: 0px 6px 3px rgba(0, 0, 0, 0.3);
-  transition: box-shadow 0.3s ease-in-out, transform 0.3s ease-in-out;
-  background-color: #e9a4e9;
-}
-/* ↑のマウスが重なった時のボタンの色や動き */
-.button_Group:hover {
-  box-shadow: 0px 8px 3px rgba(0, 0, 0, 0.5);
-  transform: scale(0.98);
-}
 
 .button_prof {
   display: block;
   position: relative;
-  background-color: #e6b073;
+  background-color: #ffffff;
   /*background-image:url(./img/An1_png.png);  CSSで画像を表示するテスト*/
   background-size: cover;
   background-repeat: repeat;
   text-align: center;
   width: 100%;
-  min-height: 89vh;
-  font-size: 120px;
+  min-height: 72vh;
+  font-size: 25px;
   
 }
 
