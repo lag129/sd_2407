@@ -5,7 +5,7 @@ import ReactDOM from 'react-dom/client';
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import Header from './components/Header';
-import footer from './components/footer';
+import Footer from './components/Footer';
 import MeishiForm from './ui/MeishiForm';
 import CreateGroup from './ui/CreateGroup';
 import JoinGroup from './ui/JoinGroup';
@@ -149,7 +149,7 @@ const App = () => {
         <Route path="/groupsanka" element={<JoinGroup />} />
         {/* 他のルートを追加する場合はここに記述 */}
       </Routes>
-      <footer />
+      <Footer />
     </Router>
   );
 };
