@@ -5,7 +5,7 @@ import './Footer.css';
 
 const Footer = () => {
   return (
-    <footer className="footer">
+    <footer className="Footer">
       <p>&copy; 2024 チーム東北工大. </p>
       <nav>
         <ul>
