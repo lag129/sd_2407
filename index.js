@@ -13,8 +13,6 @@ import styles from './Button.module.css';
 import Titlegazou from "./img/An1_png.png"
 import { findSmilarity } from './logic/findSimilarity';
 
-
-
 //　ーーーーーーー1ページ目_ホーム欄ーーーーーーーー
 const Home = () => {
   // 遷移用ボタンアクション
@@ -39,8 +37,6 @@ const Home = () => {
       setdata(JSON.parse(jsonData));
     };
   }, []);
-
-
 
   return (
     <div className={styles.button_Center}>
@@ -68,8 +64,6 @@ const Home = () => {
         <button className={styles.button_Group} onClick={onMovePage2}>作る</button>
         <button className={styles.button_Group} onClick={onMovePage3}>入る</button><br></br><br></br>
       </div>
-
-
       <button onClick={onMovePage1}>プロフィール入力(2ページ目)へ</button>
     </div>
   );
@@ -77,9 +71,6 @@ const Home = () => {
 
 //　ーーーーーーー2ページ目_名刺入力欄ーーーーーーーー
 const Meishi = () => {
-  const useState = React.useState;
-  const [state, setState] = useState(0);
-
   // 遷移用ボタンアクション
   const navigation = useNavigate()
   const onMovePage = () => {
@@ -116,7 +107,9 @@ const ResultPage = () => {
 
   if (data.length) {
     data.map((item, _) => {
-      item.percent = findSmilarity(myJsonData.tags, item.tags);
+      let percent = findSmilarity(myJsonData.tags, item.tags);
+      // percent = Math.max(50, Math.min(100, percent));
+      item.percent = percent;
     });
   };
 
@@ -131,7 +124,7 @@ const ResultPage = () => {
       <ul>
         {data.map((item, index) => (
           <li key={index}>
-            <p>マッチ率{item.percent}%</p>
+            <p>マッチ率 {item.percent}%</p>
             <p>{item.name}</p>
             <p>{item.shozoku}</p>
             <p>{item.tags}</p>
