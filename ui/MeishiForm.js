@@ -1,5 +1,6 @@
 "use strict";
 
+
 const handleSubmit = (event) => {
   event.preventDefault();
   const form = new FormData(event.currentTarget);
@@ -18,7 +19,7 @@ const handleSubmit = (event) => {
 export default function MeishiForm() {
   return (
     <form onSubmit={handleSubmit}>
-      <label>
+      <label >
         名前：
         <input type="text" name="name" defaultValue="" />
       </label>

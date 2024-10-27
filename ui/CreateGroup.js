@@ -2,6 +2,7 @@
 
 import React from 'react';
 import { addDataToFirebase, createRoom } from '../backend/fetch';
+import styles from '../Button.module.css';
 
 /**
  * 100000から999999までのランダムな整数を作成
@@ -28,9 +29,9 @@ const CreateGroup = () => {
   };
 
   return (
-    <div>
+    <div className={styles.button_ID}>
       <p>あなたのグループIDは {id} です。</p>
-      <button onClick={handleSubmit}>グループを作成</button>
+      <button className={styles.button_Group} onClick={handleSubmit}>グループを作成</button>
     </div>
   );
 };
