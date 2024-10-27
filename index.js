@@ -9,6 +9,10 @@ import MeishiForm from './ui/MeishiForm';
 import CreateGroup from './ui/CreateGroup';
 import JoinGroup from './ui/JoinGroup';
 import { fetchDataFromFirebase } from './backend/fetch';
+import styles from './Button.module.css';
+import Titlegazou from "./img/An1_png.png"
+
+
 
 //　ーーーーーーー1ページ目_ホーム欄ーーーーーーーー
 const Home = () => {
@@ -35,26 +39,34 @@ const Home = () => {
     };
   }, []);
 
-  return (
-    <div>
-      <h1>あなたの名刺データ</h1>
-      {data ? (
-        <div>
-          <p>名前：{data.name}</p>
-          <p>所属：{data.shozoku}</p>
-          <p>タグ：{data.tags}</p>
-        </div>
-      ) : (
-        <div>
-          <p>情報が入力されていません</p>
-        </div>
-      )}
+ 
 
-      <button onClick={onMovePage1}>プロフィール入力へ</button>
-      <br></br>
-      <p>グループ</p>
-      <button onClick={onMovePage2}>作る</button>
-      <button onClick={onMovePage3}>入る</button><br></br><br></br>
+  return (
+    <div className={styles.button_Center}>
+      <div className={styles.button_Gazou}>
+        <img src={Titlegazou} />
+      </div>
+
+      <div className={styles.button_Home}>
+        <h2>あなたの名刺データ</h2>
+        {data ? (
+          <div>
+            <p>名前：{data.name}</p>
+            <p>所属：{data.shozoku}</p>
+            <p>タグ：{data.tags}</p>
+          </div>
+        ) : (
+          <div>
+            <p>情報が入力されていません</p>
+          </div>
+        )}
+
+        <button className={styles.button} onClick={onMovePage1}>プロフィール入力へ</button>
+        <br></br>
+        <h3>グループ</h3>
+        <button className={styles.button_Group} onClick={onMovePage2}>作る</button>
+        <button className={styles.button_Group} onClick={onMovePage3}>入る</button><br></br><br></br>
+      </div>
 
 
       <button onClick={onMovePage1}>プロフィール入力(2ページ目)へ</button>
@@ -74,11 +86,12 @@ const Meishi = () => {
   }
 
   return (
-    <div>
-      <h1>プロフィール入力</h1>
+    <div className={styles.button_Center}>
+      <h>プロフィール入力</h>
+
       <MeishiForm />
       {/* <button onClick={addsyumi}>追加</button> */}
-      <button onClick={onMovePage}>ホームに戻る</button>
+      <button className={styles.button_Back} onClick={onMovePage}>ホームに戻る</button>
     </div>
   );
 };
