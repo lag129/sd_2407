@@ -10,9 +10,9 @@ const Header = () => {
     <header>
       <h1><a herf = "#">なにはな</a></h1>
       <nav>
-        <ul className = "menu-group">
-          <li className = "menu-item"><a href="#">グループを作る</a></li>
-          <li className = "menu-item"><a href="#">グループに参加</a></li>
+        <ul>
+          <li className = "header-item"><a href="#">グループを作る</a></li>
+          <li className = "header-item"><a href="#">グループに参加</a></li>
         </ul>
       </nav>
     </header>
