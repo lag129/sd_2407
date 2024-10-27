@@ -7,10 +7,11 @@ import classes from './Header.css';
 
 import logo from "../img/An1_png.png";
 //文字を押せば対象ページに行けるようにしたいので#に適切な変更を加えてください
+//各項目を横並びにしたいです
 const Header = () => {
   return(
     <header>
-      <h1 className={classes.img}><img src = {logo} alt = "ロゴマーク"></img></h1>
+      <div className={classes.img}><img src = {logo} alt = "ロゴマーク"></img></div>
       <nav>
         <ul>
           <li className = {classes.text}><a href= "#">名刺の編集</a></li>
