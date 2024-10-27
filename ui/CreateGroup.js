@@ -9,19 +9,18 @@ import { addDataToFirebase, createRoom } from '../backend/fetch';
  */
 const generateID = () => {
   const randomNum = Math.floor(Math.random() * 900000) + 100000;
-  return randomNum;
+  return randomNum.toString();
 }
 
-// const id = generateID();
-
 const CreateGroup = () => {
+  const id = generateID();
   const handleSubmit = async (e) => {
     e.preventDefault();
     // ローカルストレージからデータを取得
     const myData = localStorage.getItem("myMeishiData");
     const data = JSON.parse(myData);
     try {
-      await addDataToFirebase("123456", data);
+      await addDataToFirebase(id, data);
       console.log("追加成功");
     } catch (error) {
       console.error("追加エラー:", error);
@@ -30,7 +29,8 @@ const CreateGroup = () => {
 
   return (
     <div>
-      <button onClick={handleSubmit}>データを送信</button>
+      <p>あなたのグループIDは {id} です。</p>
+      <button onClick={handleSubmit}>グループを作成</button>
     </div>
   );
 };
