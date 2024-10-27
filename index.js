@@ -7,6 +7,7 @@ import Header from './components/Header';
 import MeishiForm from './ui/MeishiForm';
 import CreateGroup from './ui/CreateGroup';
 import styles from './Button.module.css';
+
 import Titlegazou from "./img/An1_png.png"
 
 
@@ -82,12 +83,12 @@ const Meishi = () => {
   }
 
   return (
-    <div>
+    <div className={styles.button_Center}>
       <h>プロフィール入力</h>
 
       <MeishiForm />
       {/* <button onClick={addsyumi}>追加</button> */}
-      <button onClick={onMovePage}>ホームに戻る</button>
+      <button className={styles.button_Back} onClick={onMovePage}>ホームに戻る</button>
     </div>
   );
 };
