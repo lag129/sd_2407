@@ -5,6 +5,7 @@ import ReactDOM from 'react-dom/client';
 import { useState, useEffect } from 'react';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import Header from './components/Header';
+import footer from './components/footer';
 import MeishiForm from './ui/MeishiForm';
 import CreateGroup from './ui/CreateGroup';
 import JoinGroup from './ui/JoinGroup';
