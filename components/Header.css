@@ -1,9 +1,10 @@
-header{
-  background-color: #FFC107;
-  color : white;
-
+.text
+{
+  color:aqua;
 }
 
-header:hover{
-  font-size:larger;
+.img
+{
+  max-width : 10%;
+  height : auto;
 }
