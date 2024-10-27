@@ -1,7 +1,7 @@
 "use strict";
 
 import React from 'react';
-import { addDataToFirebase, fetchData } from '../backend/fetch';
+import { addDataToExistingRoom, fetchData } from '../backend/fetch';
 
 const handleFormSubmit = (event) => {
   event.preventDefault();
@@ -17,7 +17,7 @@ const handleSubmit = async (id) => {
   const myData = localStorage.getItem("myMeishiData");
   const data = JSON.parse(myData);
   try {
-    await addDataToFirebase(id, data);
+    await addDataToExistingRoom(id, data);
     console.log("追加成功");
   } catch (error) {
     console.error("追加エラー:", error);

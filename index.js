@@ -2,7 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
 import Header from './components/Header';
 import MeishiForm from './ui/MeishiForm';
@@ -11,6 +11,7 @@ import JoinGroup from './ui/JoinGroup';
 import { fetchDataFromFirebase } from './backend/fetch';
 import styles from './Button.module.css';
 import Titlegazou from "./img/An1_png.png"
+import { findSmilarity } from './logic/findSimilarity';
 
 
 
@@ -39,7 +40,7 @@ const Home = () => {
     };
   }, []);
 
- 
+
 
   return (
     <div className={styles.button_Center}>
@@ -109,6 +110,21 @@ const ResultPage = () => {
     };
     loadData();
   }, []);
+
+  // const fetchedData = data;
+  // const jsonData = JSON.parse(JSON.stringify(fetchedData, null, 2));
+
+  const myData = localStorage.getItem("myMeishiData");
+  // const myJsonData = JSON.parse(myData);
+
+  if (data.length) {
+    // console.log("解析結果");
+    data.map((item, _) => {
+      console.log(item.tags);
+    });
+    // console.log(data);
+    console.log(findSmilarity(myData.tags, data.tags));
+  }
 
   // 遷移用ボタンアクション
   const navigation = useNavigate()
