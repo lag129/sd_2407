@@ -119,15 +119,17 @@ const ResultPage = () => {
     navigation("/group");
   }
 
+  const sortedData = data.sort((a, b) => b.percent - a.percent);
+
   return (
     <div>
       <ul>
-        {data.map((item, index) => (
+        {sortedData.map((item, index) => (
           <li key={index}>
-            <p>マッチ率 {item.percent}%</p>
+            <p>マッチ率 {parseInt(item.percent, 10)}%</p>
             <p>{item.name}</p>
             <p>{item.shozoku}</p>
-            <p>{item.tags}</p>
+            <p>{item.tags.join(' ')}</p>
           </li>
         ))}
       </ul>
