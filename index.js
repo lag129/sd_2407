@@ -103,9 +103,7 @@ const ResultPage = () => {
   React.useEffect(() => {
     const loadData = async () => {
       try {
-        const fetchedData = await fetchDataFromFirebase('123456');
-        console.log('データの取得に成功しました:', fetchedData);
-        setData(fetchedData);
+        setData(await fetchDataFromFirebase('123456'));
       } catch (error) {
         console.error('データの取得に失敗しました:', error);
       }
@@ -113,20 +111,14 @@ const ResultPage = () => {
     loadData();
   }, []);
 
-  // const fetchedData = data;
-  // const jsonData = JSON.parse(JSON.stringify(fetchedData, null, 2));
-
   const myData = localStorage.getItem("myMeishiData");
-  // const myJsonData = JSON.parse(myData);
+  const myJsonData = JSON.parse(myData);
 
   if (data.length) {
-    // console.log("解析結果");
     data.map((item, _) => {
-      console.log(item.tags);
+      item.percent = findSmilarity(myJsonData.tags, item.tags);
     });
-    // console.log(data);
-    console.log(findSmilarity(myData.tags, data.tags));
-  }
+  };
 
   // 遷移用ボタンアクション
   const navigation = useNavigate()
@@ -139,10 +131,10 @@ const ResultPage = () => {
       <ul>
         {data.map((item, index) => (
           <li key={index}>
+            <p>マッチ率{item.percent}%</p>
             <p>{item.name}</p>
             <p>{item.shozoku}</p>
             <p>{item.tags}</p>
-            {/* <p>percent</p> */}
           </li>
         ))}
       </ul>
