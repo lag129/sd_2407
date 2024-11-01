@@ -17,7 +17,7 @@ const ProfilePage = () => {
       </div>
       <MeishiForm />
       <button
-        className="relative inline-block px-3 py-2 text-gray-700 bg-gray-200 rounded-full shadow-inner font-bold border-2 border-gray-600"
+        className="btn"
         onClick={onMovePage}
       >
         ホームに戻る

@@ -30,7 +30,7 @@ const CreateGroup = () => {
   return (
     <div className={styles.button_ID}>
       <p>あなたのグループIDは {id} です。</p>
-      <button className={styles.button_Group} onClick={handleSubmit}>グループを作成</button>
+      <button className="btn" onClick={handleSubmit}>グループを作成</button>
     </div>
   );
 };

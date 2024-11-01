@@ -48,11 +48,13 @@ const Home = () => {
             <p>情報が入力されていません</p>
           </div>
         )}
-        <button className={styles.button} onClick={onMovePage1}>プロフィール入力へ</button>
+        <button className="btn" onClick={onMovePage1}>プロフィール入力へ</button>
         <br></br>
         <h3>グループ</h3>
-        <button className={styles.button_Group} onClick={onMovePage2}>作る</button>
-        <button className={styles.button_Group} onClick={onMovePage3}>参加</button><br></br><br></br>
+        <div className="flex justify-around">
+          <button className="btn" onClick={onMovePage2}>グループを作成</button>
+          <button className="btn" onClick={onMovePage3}>グループに参加</button>
+        </div>
       </div>
     </div>
   );

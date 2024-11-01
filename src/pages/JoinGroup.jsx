@@ -34,7 +34,7 @@ const JoinGroup = () => {
         <p>グループIDを入力してください</p>
         <form onSubmit={handleFormSubmit}>
           <input type="text" name="id" />
-          <button type="submit">参加する</button>
+          <button className="btn" type="submit">参加する</button>
         </form>
       </div>
     </div>
