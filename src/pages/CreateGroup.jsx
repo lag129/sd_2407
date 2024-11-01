@@ -1,8 +1,7 @@
 "use strict";
 
-import React from 'react';
 import { addDataToFirebase } from '../backend/fetch';
-import styles from '../Button.module.css';
+import styles from './Button.module.css';
 
 /**
  * 100000から999999までのランダムな整数を作成

@@ -1,8 +1,8 @@
 "use strict";
 
-import { addDataToExistingRoom, fetchData } from '../backend/fetch';
+import { addDataToExistingRoom } from '../backend/fetch';
 import { useNavigate } from 'react-router-dom';
-import styles1 from "../JoinGroup.module.css";
+import styles1 from "./JoinGroup.module.css";
 
 const handleFormSubmit = (event) => {
   event.preventDefault();
@@ -28,15 +28,15 @@ const handleSubmit = async (id) => {
   }
 };
 
-// データの取得
-const loadData = async () => {
-  try {
-    const documents = await fetchData("posts");
-    console.log("取得したデータ:", documents);
-  } catch (error) {
-    console.error("取得エラー:", error);
-  }
-};
+// // データの取得
+// const loadData = async () => {
+//   try {
+//     const documents = await fetchData("posts");
+//     console.log("取得したデータ:", documents);
+//   } catch (error) {
+//     console.error("取得エラー:", error);
+//   }
+// };
 
 const JoinGroup = () => {
   return (
