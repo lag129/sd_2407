@@ -3,7 +3,7 @@
 import { useState, useEffect } from "react";
 import { useNavigate } from 'react-router-dom';
 import styles from './Button.module.css';
-import Titlegazou from "../assets/logo.png"
+import titileImage from "../assets/title.png"
 
 const Home = () => {
   // 遷移用ボタンアクション
