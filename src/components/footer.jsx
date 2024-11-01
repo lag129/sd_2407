@@ -1,10 +1,8 @@
 "use strict";
 
-import './Footer.css';
-
 const Footer = () => {
   return (
-    <footer className="Footer">
+    <footer className="bg-gray-900 text-white text-center">
       <p>&copy; 2024 チーム東北工大. </p>
     </footer>
   );
