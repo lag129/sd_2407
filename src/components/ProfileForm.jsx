@@ -21,32 +21,23 @@ const handleSubmit = (event, setMessage) => {
   setMessage('入力が完了しました！');
 };
 
-function MeishiForm() {
+function ProfileForm() {
   const [message, setMessage] = useState('');
 
   return (
     <div>
       <form onSubmit={(event) => handleSubmit(event, setMessage)}>
-        <label>
-          名前：
-          <input type="text" name="name" defaultValue="" />
-        </label>
+        名前：<input type="text" name="name" />
         <br />
-        <label>
-          所属：
-          <input type="text" name="shozoku" defaultValue="" />
-        </label>
+        所属：<input type="text" name="shozoku" />
         <br />
-        <label>
-          趣味などを入力：
-          <input type="text" name="tags" defaultValue="" />
-        </label>
+        趣味などを入力：<input type="text" name="tags" />
         <br />
-        <input type="submit" value="Submit" />
+        <button className="btn" type="submit">決定</button>
       </form>
-      {message && <p>{message}</p>}
+      {message && <p key="message">{message}</p>}
     </div>
   );
 };
 
-export default MeishiForm;
+export default ProfileForm;
