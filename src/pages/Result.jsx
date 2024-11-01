@@ -1,9 +1,10 @@
 "use strict";
 
 import { useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
 import { fetchDataFromFirebase } from '../backend/fetch';
 import { findSmilarity } from '../logic/findSimilarity';
+import Button from '../components/Button';
+import Card from '../components/Card';
 
 const ResultPage = () => {
   // ローカルストレージからidを取得
@@ -31,12 +32,6 @@ const ResultPage = () => {
     });
   };
 
-  // 遷移用ボタンアクション
-  const navigation = useNavigate()
-  const onMovePage = () => {
-    navigation("/group");
-  }
-
   const sortedData = data.sort((a, b) => b.percent - a.percent);
 
   return (
@@ -44,14 +39,16 @@ const ResultPage = () => {
       <ul>
         {sortedData.map((item, index) => (
           <li key={index}>
-            <p>マッチ率 {parseInt(item.percent, 10)}%</p>
-            <p>{item.name}</p>
-            <p>{item.shozoku}</p>
-            <p>{item.tags.join(' ')}</p>
+            <Card 
+              name={item.name}
+              shozoku={item.shozoku}
+              tags={item.tags}
+              percent={item.percent}
+            />
           </li>
         ))}
       </ul>
-      <button onClick={onMovePage}>グループ参加(4ページ目)</button>
+      <Button name="ホームに戻る" link="/" />
     </div>
   );
 };

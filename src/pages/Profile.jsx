@@ -1,27 +1,16 @@
 "use strict";
 
-import { useNavigate } from 'react-router-dom';
-import MeishiForm from '../components/MeishiForm';
+import Button from '../components/Button';
+import ProfileForm from '../components/ProfileForm';
 
 const ProfilePage = () => {
-  // 遷移用ボタンアクション
-  const navigation = useNavigate()
-  const onMovePage = () => {
-    navigation("/");
-  }
-
   return (
-    <div>
+    <div className="mx-auto">
       <div className="block relative bg-white bg-cover bg-repeat text-center w-full text-[25px]">
         <h1>プロフィールを入力</h1>
       </div>
-      <MeishiForm />
-      <button
-        className="btn"
-        onClick={onMovePage}
-      >
-        ホームに戻る
-      </button>
+      <ProfileForm />
+      <Button name="ホームに戻る" link="/" />
     </div>
   );
 };
