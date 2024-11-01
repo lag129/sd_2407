@@ -7,7 +7,7 @@ const Button = ({ name, link }) => {
   const navigate = useNavigate();
 
   return(
-    <div className="flex justify-center items-center">
+    <div className="flex justify-center items-center mt-4">
       <button
         className="btn"
         onClick={() => navigate({ pathname: link })}

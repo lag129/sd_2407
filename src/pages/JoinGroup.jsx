@@ -2,7 +2,8 @@
 
 import { addDataToExistingRoom } from '../backend/fetch';
 import { useNavigate } from 'react-router-dom';
-import styles1 from "./JoinGroup.module.css";
+import Button from '../components/Button';
+// import styles1 from "./JoinGroup.module.css";
 
 const JoinGroup = () => {
   const navigate = useNavigate();
@@ -28,15 +29,14 @@ const JoinGroup = () => {
   };
 
   return (
-    <div className={styles1.button__Join}>
-      <div className={styles1.button_Sa}>
-        <h1>グループに参加</h1>
-        <p>グループIDを入力してください</p>
-        <form onSubmit={handleFormSubmit}>
-          <input type="text" name="id" />
-          <button className="btn" type="submit">参加する</button>
-        </form>
-      </div>
+    <div>
+      <h1>グループに参加</h1>
+      <p>グループIDを入力してください</p>
+      <form onSubmit={handleFormSubmit}>
+        <input type="text" name="id" />
+        <button className="btn" type="submit">参加する</button>
+      </form>
+      <Button name="ホームに戻る" link="/" />
     </div>
   );
 };

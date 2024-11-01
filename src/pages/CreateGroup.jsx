@@ -1,7 +1,8 @@
 "use strict";
 
 import { addDataToFirebase } from '../backend/fetch';
-import styles from './Button.module.css';
+import Button from '../components/Button';
+// import styles from './Button.module.css';
 
 /**
  * 100000から999999までのランダムな整数を作成
@@ -28,9 +29,10 @@ const CreateGroup = () => {
   };
 
   return (
-    <div className={styles.button_ID}>
+    <div>
       <p>あなたのグループIDは {id} です。</p>
       <button className="btn" onClick={handleSubmit}>グループを作成</button>
+      <Button name="ホームに戻る" link="/" />
     </div>
   );
 };
