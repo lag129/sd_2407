@@ -2,7 +2,6 @@
 
 import { useNavigate } from 'react-router-dom';
 import MeishiForm from '../components/MeishiForm';
-import styles from './Button.module.css';
 
 const ProfilePage = () => {
   // 遷移用ボタンアクション
@@ -12,12 +11,17 @@ const ProfilePage = () => {
   }
 
   return (
-    <div className={styles.button_prof}>
-      <h1>プロフィールを入力</h1>
-
+    <div>
+      <div className="block relative bg-white bg-cover bg-repeat text-center w-full text-[25px]">
+        <h1>プロフィールを入力</h1>
+      </div>
       <MeishiForm />
-      {/* <button onClick={addsyumi}>追加</button> */}
-      <button className={styles.button_Back} onClick={onMovePage}>ホームに戻る</button>
+      <button
+        className="relative inline-block px-3 py-2 text-gray-700 bg-gray-200 rounded-full shadow-inner font-bold border-2 border-gray-600"
+        onClick={onMovePage}
+      >
+        ホームに戻る
+      </button>
     </div>
   );
 };
