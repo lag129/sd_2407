@@ -11,18 +11,20 @@ import JoinGroup from './pages/JoinGroup';
 
 const App = () => {
   return (
-    <Router>
-      <Header />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/result" element={<Result />} />
-        <Route path="/create" element={<CreateGroup />} />
-        <Route path="/join" element={<JoinGroup />} />
-        {/* 他のルートを追加する場合はここに記述 */}
-      </Routes>
-      <Footer />
-    </Router>
+    <div className="font-NotoSansJP">
+      <Router>
+        <Header />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/profile" element={<Profile />} />
+          <Route path="/result" element={<Result />} />
+          <Route path="/create" element={<CreateGroup />} />
+          <Route path="/join" element={<JoinGroup />} />
+          {/* 他のルートを追加する場合はここに記述 */}
+        </Routes>
+        <Footer />
+      </Router>
+    </div>
   );
 };
 
