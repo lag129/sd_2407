@@ -31,10 +31,7 @@ const Home = () => {
 
   return (
     <div className={styles.button_Center}>
-      <div className={styles.button_Gazou}>
-        <img src={Titlegazou} />
-      </div>
-
+      <img className="mx-auto" src={titileImage} width="600" />
       <div className={styles.button_Home}>
         <h2>あなたの名刺データ</h2>
         {data ? (
