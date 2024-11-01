@@ -1,20 +1,19 @@
 "use strict";
 
 import React from 'react';
-import ReactDOM from 'react-dom/client';
-import { useState } from 'react';
+import { useState } from "react";
 import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom';
-import Header from './components/Header';
+import Header from './components/header';
 import Footer from './components/footer';
 import MeishiForm from './ui/MeishiForm';
 import CreateGroup from './ui/CreateGroup';
 import JoinGroup from './ui/JoinGroup';
 import { fetchDataFromFirebase } from './backend/fetch';
 import styles from './Button.module.css';
-import Titlegazou from "./img/An1_png.png"
+import Titlegazou from "./assets/logo.png"
 import { findSmilarity } from './logic/findSimilarity';
 
-//　ーーーーーーー1ページ目_ホーム欄ーーーーーーーー
+//ーーーーーーー1ページ目_ホーム欄ーーーーーーーー
 const Home = () => {
   // 遷移用ボタンアクション
   const navigation = useNavigate()
@@ -58,19 +57,17 @@ const Home = () => {
             <p>情報が入力されていません</p>
           </div>
         )}
-
         <button className={styles.button} onClick={onMovePage1}>プロフィール入力へ</button>
         <br></br>
         <h3>グループ</h3>
         <button className={styles.button_Group} onClick={onMovePage2}>作る</button>
         <button className={styles.button_Group} onClick={onMovePage3}>参加</button><br></br><br></br>
       </div>
-      
     </div>
   );
 };
 
-//　ーーーーーーー2ページ目_名刺入力欄ーーーーーーーー
+//ーーーーーーー2ページ目_名刺入力欄ーーーーーーーー
 const Meishi = () => {
   // 遷移用ボタンアクション
   const navigation = useNavigate()
@@ -109,7 +106,7 @@ const ResultPage = () => {
   const myJsonData = JSON.parse(myData);
 
   if (data.length) {
-    data.map((item, _) => {
+    data.map((item) => {
       let percent = findSmilarity(myJsonData.tags, item.tags);
       // percent = Math.max(50, Math.min(100, percent));
       item.percent = percent;
@@ -141,7 +138,7 @@ const ResultPage = () => {
   );
 };
 
-//　ページ遷移動作
+// ページ遷移動作
 const App = () => {
   return (
     <Router>
@@ -159,5 +156,4 @@ const App = () => {
   );
 };
 
-const root = ReactDOM.createRoot(document.getElementById('app'));
-root.render(<App />);
+export default App;

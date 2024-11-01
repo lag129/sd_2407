@@ -1,6 +1,6 @@
 "use strict";
 
-import React, { useState } from 'react';
+import { useState } from "react";
 
 const handleSubmit = (event, setMessage) => {
   event.preventDefault();
@@ -21,7 +21,7 @@ const handleSubmit = (event, setMessage) => {
   setMessage('入力が完了しました！');
 };
 
-export default function MeishiForm() {
+function MeishiForm() {
   const [message, setMessage] = useState('');
 
   return (
@@ -48,3 +48,5 @@ export default function MeishiForm() {
     </div>
   );
 };
+
+export default MeishiForm;

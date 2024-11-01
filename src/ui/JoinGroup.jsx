@@ -1,9 +1,7 @@
 "use strict";
 
-import React from 'react';
 import { addDataToExistingRoom, fetchData } from '../backend/fetch';
 import { useNavigate } from 'react-router-dom';
-import styles from './JoinGroup.css';
 import styles1 from "../JoinGroup.module.css";
 
 const handleFormSubmit = (event) => {

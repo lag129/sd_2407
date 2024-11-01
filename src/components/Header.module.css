@@ -1,0 +1,14 @@
+.button_Header {
+  display: block;
+  color: #d31f1f;
+
+  /*background-image:url(./img/An1_png.png);  CSSで画像を表示するテスト*/
+  width: 300px;
+  height: 200px;
+}
+
+.button_Header img {
+  background-color: #d31f1f;
+  width: 300px;
+  height: 200px;
+}
