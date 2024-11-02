@@ -17,13 +17,14 @@ const Home = () => {
 
   return (
     <div>
-      <img className="mx-auto" src={titileImage} width="400" />
+      <img className="mx-auto mt-8" src={titileImage} width="400" />
       <div>
-        <h2 className="flex justify-center mt-8 text-lg">あなたの名刺データ</h2>
+        <h2 className="flex justify-center mt-16 text-lg">あなたの名刺データ</h2>
         {data.name
           ? <Card name={data.name} shozoku={data.shozoku} tags={data.tags} />
           : <p>情報が入力されていません</p>
         }
+        <br /><br />
         <Button name="プロフィールを入力" link="/profile" />
         <br />
         <h3 className="flex justify-center text-lg">グループ</h3>
